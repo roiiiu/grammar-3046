@@ -1,29 +1,59 @@
+// uno.config.ts
 import {
   defineConfig,
   presetAttributify,
   presetIcons,
   presetUno,
-  presetWebFonts,
 } from 'unocss'
 
 export default defineConfig({
-  shortcuts: [
-    ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
-    ['icon-btn', 'text-[0.9em] inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600 !outline-none'],
-  ],
+  shortcuts: {
+    'shadow-around': 'shadow-[0px_2px_10px_0px_rgba(0,0,0,0.1)]',
+    'border-base': 'border-gray-500 border-op-20',
+    'text-base': 'text-gray-700 dark:text-gray-200',
+    'bg-base': 'bg-back dark:bg-back-dark',
+  },
+  theme: {
+    colors: {
+      primary: {
+        DEFAULT: '#8742E0',
+        deep: '#5E1EA9',
+        dark: '#4C0D6D',
+      },
+      secondary: {
+        DEFAULT: '#EADCF8',
+        dark: '#D4BFF0',
+      },
+      card: {
+        DEFAULT: '#FFFFFF',
+        dark: '#161B22',
+      },
+      back: {
+        DEFAULT: '#FFFFFF',
+        dark: '#121212',
+      },
+      border: {
+        DEFAULT: '#E8EAED',
+        dark: '#30363D',
+      },
+      inputBack: '#E8EAED',
+      warning: {
+        DEFAULT: '#F2A324',
+      },
+      iconBtnBack: '#CFE4FE',
+      text: {
+        DEFAULT: '#FFFFFF',
+        secondary: '#767676',
+        dark: '#1A202C',
+      },
+    },
+  },
   presets: [
     presetUno(),
     presetAttributify(),
     presetIcons({
       scale: 1.2,
       warn: true,
-    }),
-    presetWebFonts({
-      fonts: {
-        sans: 'DM Sans',
-        serif: 'DM Serif Display',
-        mono: 'DM Mono',
-      },
     }),
   ],
 })
